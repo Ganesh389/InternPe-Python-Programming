@@ -1,0 +1,20 @@
+# Program for Displaying Clock using Pyhton
+from tkinter import *
+from tkinter.ttk import *
+ 
+from time import strftime
+ 
+root = Tk()
+root.title('Digital Clock')
+ 
+def time():
+    string = strftime('%H:%M:%S %p')
+    lb.config(text=string)
+    lb.after(1000, time)
+ 
+lb = Label(root, font=('ds-digital', 100, 'bold'), background='black', foreground='red')
+ 
+lb.pack(anchor='center')
+time()
+ 
+mainloop()
